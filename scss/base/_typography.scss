@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+}
+.typo-playfair {
+  font-family: "Playfair Display", serif;
+}
+.typo-text-xs {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+}
+.typo-text-sm {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+.typo-text-base {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+.typo-text-lg {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+}
+.typo-text-xl {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+.typo-text-2xl {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+}
+.typo-text-3xl {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+}
+.typo-text-4xl {
+  font-size: 2.25rem; /* 36px */
+  line-height: 2.5rem; /* 40px */
+}
+.typo-text-5xl {
+  font-size: 3rem; /* 48px */
+  line-height: 1;
+}
+.typo-text-6xl {
+  font-size: 3.75rem; /* 60px */
+  line-height: 1;
+}
+.typo-text-7xl {
+  font-size: 4.5rem; /* 72px */
+  line-height: 1;
+}
+.typo-text-8xl {
+  font-size: 6rem; /* 96px */
+  line-height: 1;
+}
+.typo-text-9xl {
+  font-size: 8rem; /* 128px */
+  line-height: 1;
+}
+
+// lg breakpoint bootstrap
+@media (min-width: 768px) {
+  .typo-text-lg-xs {
+    font-size: 0.75rem; /* 12px */
+    line-height: 1rem; /* 16px */
+  }
+  .typo-text-lg-sm {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+  }
+  .typo-text-lg-base {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+  }
+  .typo-text-lg-lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+  .typo-text-lg-xl {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
+  .typo-text-lg-2xl {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+  }
+  .typo-text-lg-3xl {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+  }
+  .typo-text-lg-4xl {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+  }
+  .typo-text-lg-5xl {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+  }
+  .typo-text-lg-6xl {
+    font-size: 3.75rem; /* 60px */
+    line-height: 1;
+  }
+  .typo-text-lg-7xl {
+    font-size: 4.5rem; /* 72px */
+    line-height: 1;
+  }
+  .typo-text-lg-8xl {
+    font-size: 6rem; /* 96px */
+    line-height: 1;
+  }
+  .typo-text-lg-9xl {
+    font-size: 8rem; /* 128px */
+    line-height: 1;
+  }
+}

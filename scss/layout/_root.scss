@@ -1,0 +1,50 @@
+/* layout */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1 1 0%;
+}
+/* background */
+.custom-background-grid {
+  background-size: 6rem 4rem;
+  background-image: linear-gradient(to right, #f0f0f0 1px, rgba(0, 0, 0, 0) 1px),
+    linear-gradient(to bottom, #f0f0f0 1px, rgba(0, 0, 0, 0) 1px);
+}
+.custom-background-layer {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(#fff, rgba(255, 255, 255, 0));
+  aspect-ratio: 1 / 1;
+  inset: 0;
+  margin: auto;
+}
+.custom-header-none {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+
+  /* backdrop-filter: blur(1px); */
+
+  background-color: white;
+  border-bottom: #e5e7eb solid 1px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: #ffffff80;
+  backdrop-filter: blur(8px);
+  border-bottom: #b1b1b180 solid 1px;
+  /* box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
