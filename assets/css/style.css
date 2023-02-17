@@ -11011,87 +11011,57 @@ body {
 }
 
 @media (min-width: 768px) {
-  .typo-text-lg-xs {
+  .typo-text-md-xs {
     font-size: 0.75rem; /* 12px */
     line-height: 1rem; /* 16px */
   }
-  .typo-text-lg-sm {
+  .typo-text-md-sm {
     font-size: 0.875rem; /* 14px */
     line-height: 1.25rem; /* 20px */
   }
-  .typo-text-lg-base {
+  .typo-text-md-base {
     font-size: 1rem; /* 16px */
     line-height: 1.5rem; /* 24px */
   }
-  .typo-text-lg-lg {
+  .typo-text-md-lg {
     font-size: 1.125rem; /* 18px */
     line-height: 1.75rem; /* 28px */
   }
-  .typo-text-lg-xl {
+  .typo-text-md-xl {
     font-size: 1.25rem; /* 20px */
     line-height: 1.75rem; /* 28px */
   }
-  .typo-text-lg-2xl {
+  .typo-text-md-2xl {
     font-size: 1.5rem; /* 24px */
     line-height: 2rem; /* 32px */
   }
-  .typo-text-lg-3xl {
+  .typo-text-md-3xl {
     font-size: 1.875rem; /* 30px */
     line-height: 2.25rem; /* 36px */
   }
-  .typo-text-lg-4xl {
+  .typo-text-md-4xl {
     font-size: 2.25rem; /* 36px */
     line-height: 2.5rem; /* 40px */
   }
-  .typo-text-lg-5xl {
+  .typo-text-md-5xl {
     font-size: 3rem; /* 48px */
     line-height: 1;
   }
-  .typo-text-lg-6xl {
+  .typo-text-md-6xl {
     font-size: 3.75rem; /* 60px */
     line-height: 1;
   }
-  .typo-text-lg-7xl {
+  .typo-text-md-7xl {
     font-size: 4.5rem; /* 72px */
     line-height: 1;
   }
-  .typo-text-lg-8xl {
+  .typo-text-md-8xl {
     font-size: 6rem; /* 96px */
     line-height: 1;
   }
-  .typo-text-lg-9xl {
+  .typo-text-md-9xl {
     font-size: 8rem; /* 128px */
     line-height: 1;
-  }
-  .typo-slate-lg-50 {
-    color: #f8fafc;
-  }
-  .typo-slate-lg-100 {
-    color: #f1f5f9;
-  }
-  .typo-slate-lg-200 {
-    color: #e2e8f0;
-  }
-  .typo-slate-lg-300 {
-    color: #cbd5e1;
-  }
-  .typo-slate-lg-400 {
-    color: #94a3b8;
-  }
-  .typo-slate-lg-500 {
-    color: #64748b;
-  }
-  .typo-slate-lg-600 {
-    color: #475569;
-  }
-  .typo-slate-lg-700 {
-    color: #334155;
-  }
-  .typo-slate-lg-800 {
-    color: #1e293b;
-  }
-  .typo-slate-lg-900 {
-    color: #0f172a;
   }
 }
 /* layout */
@@ -11147,6 +11117,17 @@ main {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
+/* for hero p */
+.custom-mb-hero {
+  margin-bottom: 2.5rem;
+}
+
+/* lg breakpoint bootstrap */
+@media (min-width: 768px) {
+  .custom-mb-hero {
+    margin-bottom: 5rem;
+  }
+}
 /* utilities */
 .ut-container {
   max-width: 72rem;
@@ -11173,6 +11154,15 @@ main {
 
 .ut-shadow-md {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .ut-w-md-auto {
+    width: auto !important;
+  }
+  .ut-pt-md-9 {
+    padding-top: 9rem !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

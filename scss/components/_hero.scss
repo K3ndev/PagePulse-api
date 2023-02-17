@@ -1,0 +1,10 @@
+/* for hero p */
+.custom-mb-hero {
+  margin-bottom: 2.5rem;
+}
+/* lg breakpoint bootstrap */
+@media (min-width: 768px) {
+  .custom-mb-hero {
+    margin-bottom: 5rem;
+  }
+}
