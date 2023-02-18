@@ -21,7 +21,7 @@ const loadingSvg = `
 </svg>
 `;
 
-scanInsight.addEventListener("click", () => {
+scanInsight?.addEventListener("click", () => {
   console.log("clicked");
   scanInsight.innerHTML = `Run Test ${loadingSvg}`;
   scanInsight.disabled = true;
