@@ -11006,8 +11006,16 @@ body {
   color: #0f172a;
 }
 
+.typo-gray-600 {
+  color: #4b5563;
+}
+
 .hover-typo-slate-300:hover {
   color: #cbd5e1;
+}
+
+.typo-font-bold {
+  font-weight: 700;
 }
 
 @media (min-width: 768px) {

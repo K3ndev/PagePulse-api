@@ -9,10 +9,10 @@ const menuContainer = document.querySelector("#menu-container");
 // todo disable scroll when menu is open
 
 // menu toggle
+const currentToggle = () => {
+  return menuToggle.getAttribute("data-toggle") === "true" ? false : true;
+};
 menuToggle.addEventListener("click", () => {
-  const currentToggle = () => {
-    return menuToggle.getAttribute("data-toggle") === "true" ? false : true;
-  };
   menuToggle.setAttribute("data-toggle", currentToggle());
 
   if (currentToggle()) {
@@ -26,3 +26,19 @@ menuToggle.addEventListener("click", () => {
     menuContainer.classList.remove("d-none");
   }
 });
+
+// auto remove the menuContainer
+function handleResize() {
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    menuContainer.classList.add("d-none");
+    menuToggle.setAttribute("data-toggle", false);
+    menuClose.classList.add("d-none");
+    menuOpen.classList.remove("d-none");
+  }
+}
+
+// add event listener for initial page load
+window.addEventListener("load", handleResize);
+
+// add event listener for window resize
+window.addEventListener("resize", handleResize);

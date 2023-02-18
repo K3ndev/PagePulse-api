@@ -90,9 +90,17 @@ body {
 .typo-slate-900 {
   color: #0f172a;
 }
+.typo-gray-600 {
+  color: #4b5563;
+}
 
 .hover-typo-slate-300:hover {
   color: #cbd5e1;
+}
+
+// font weight
+.typo-font-bold {
+  font-weight: 700;
 }
 
 // lg breakpoint bootstrap
