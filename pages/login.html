@@ -1,19 +1,148 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="ut-scroll-smooth">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>webPulse Log-in Sign-Up</title>
-    <link rel="stylesheet" href="main.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- <link rel="icon" type="image/svg+xml" href="" /> -->
+    <meta name="generator" content="metric automation" />
+    <title>webPulse | Login Page</title>
+    <style></style>
   </head>
-  <body>
-    <section class="vh-100" style="background-color: #c4f1ff;">
+  <body class="custom-background-grid">
+    <div class="custom-background-layer"></div>
+    <!-- menu -->
+    <div aria-label="menu_container" id="menu-container" class="bg-white position-fixed d-none" style="z-index: 100;
+        top: 5.1rem;
+        right: 0px;
+        bottom: 0;
+        left: 0px;">
+        <div class="mx-3 mt-4">
+          <div class="d-flex flex-column gap-3">
+            <a
+              class="px-3 py-1 btn btn-outline-light border text-primary w-100"
+              id="btn-dashboard"
+              href="login.html"
+            >
+              Account
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                style="width: 1rem; display: inline"
+                
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 12h14m-6 6l6-6m-6-6l6 6"
+                />
+              </svg>
+            </a>
+            <a href="#" class="typo-slate-500">Docs</a>
+            <a href="#" class="typo-slate-500">Github</a>
+          </div>
+        </div>
+    </div>
+    </div>
+    <header class="custom-header-none" id="header">
+      <nav
+        style="height: 5rem"
+        class="ut-container d-flex align-items-center justify-content-between w-100 px-3"
+      >
+        <a src="#" class="ut-cursor-pointer" href="../index.html">
+          <img
+            src="../public/logo_light.png"
+            alt=""
+            width="120"
+            style="min-width: 90px"
+          />
+        </a>
+        <div class="d-none d-md-flex gap-3 gap-md-4 align-items-center">
+          <a href="#" class="typo-slate-500">Docs</a>
+          <a href="#" class="typo-slate-500">Github</a>
+          <a
+            class="px-3 py-1 btn btn-outline-light border text-primary"
+            id="btn-dashboard"
+            href="login.html"
+          >
+            Account
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              style="width: 1rem; display: inline"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14m-6 6l6-6m-6-6l6 6"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <!-- menu -->
+        <div
+          aria-label="burger-menu"
+          class="ut-cursor-pointer d-md-none"
+          data-toggle="false"
+          id="menu-toggle"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            id="menu-open"
+            class=""
+            style="width: 1.6rem"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            class="d-none"
+            id="menu-close"
+            style="width: 1.6rem"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M18 6L6 18M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </nav>
+    </header>
+    <section class="vh-100">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
               <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                <div class="card-body p-5 text-center">
+                <div class="card-body p-5 text-start">
       
                   <h3 class="mb-5">Sign in</h3>
       
@@ -28,16 +157,16 @@
                   </div>
       
                   <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-start mb-4">
+                  <div class="form-check d-flex justify-content-start mb-4"> 
                     <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                    <label class="form-check-label" for="form1Example3"> Remember password </label>
+                    <label class="form-check-label" for="form1Example3"> Remember password</label>
                   </div>
                   <div class="form-outline mb-4">
                   <button class="btn btn-primary btn-mm btn-block"  style="background-color: #084c62; width: 100%;" type="submit"><a href="dashBoard.html" style = "text-decoration: none; color: white;">Login</a></button>
                   </div>
                   <hr class="my-4">
-                  <div class="form-outline mb-4">
-                    <label class="form-label" for="typeEmailX-2">Don't have account yet?</label>
+                  <div class="form-outline mb-4 text-center">
+                    <label class="form-label mb-4" for="typeEmailX-2">Don't have account yet?</label>
                     <button class="btn btn-primary btn-mm btn-block" style= "background-color: #8c460b; width: 100%;" type="submit"><i class="fab fa-google me-2"></i><a href="signup.html" style = "text-decoration: none; color: white;">Create accout here</a></button>
                   </div>
                   <!-- <div class="form-outline mb-4">
@@ -49,7 +178,123 @@
             </div>
           </div>
         </div>
-      </section>
+    </section>
+    <footer
+      style="padding-top: 5rem; padding-bottom: 5rem"
+      class="bg-primary text-white"
+    >
+      <div class="ut-container px-3 typo-slate-400">
+        <div
+          class="w-full d-flex flex-column flex-md-row gap-5 gap-md-0 justify-content-md-between"
+        >
+          <div
+            class="d-flex flex-column align-items-center align-items-md-start"
+          >
+            <img
+              src="../public/logo_dark.png"
+              width="120"
+              style="min-width: 90px"
+              alt=""
+              class="mb-2"
+            />
+            <p class="text-center text-md-start">
+              Lorem ipsum dolor sit amet consectetur, <br />
+              adipisicing elit. Ea, recusandae.
+            </p>
+          </div>
+          <div class="d-flex gap-5 justify-content-center">
+            <div>
+              <h3 class="typo-slate-100 mb-2 fw-bold">Projects</h3>
+              <p class="ut-cursor-pointer hover-typo-slate-300">Contribute</p>
+              <p class="ut-cursor-pointer hover-typo-slate-300">Changelog</p>
+              <p class="ut-cursor-pointer hover-typo-slate-300">Releases</p>
+              <p class="ut-cursor-pointer hover-typo-slate-300">Docs API</p>
+            </div>
+            <div>
+              <h3 class="typo-slate-100 mb-2 fw-bold">Community</h3>
+              <p class="ut-cursor-pointer hover-typo-slate-300">Join Discord</p>
+              <p class="ut-cursor-pointer hover-typo-slate-300">
+                Follow on Twitter
+              </p>
+              <p class="ut-cursor-pointer hover-typo-slate-300">
+                Email newsletter
+              </p>
+              <p class="ut-cursor-pointer hover-typo-slate-300">
+                Gihub discussions
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="d-flex justify-content-between flex-column flex-md-row">
+          <p class="text-center">© 2023 webpulse.com All rights reserved.</p>
+          <div class="d-flex gap-2 justify-content-center">
+            <div class="ut-cursor-pointer hover-typo-slate-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                style="width: 1.25rem"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M22 4.01c-1 .49-1.98.689-3 .99c-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4c0 0-4.182 7.433 4 11c-1.872 1.247-3.739 2.088-6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497-3.753c0-.249 1.51-2.772 1.818-4.013z"
+                ></path>
+              </svg>
+            </div>
+            <div class="ut-cursor-pointer hover-typo-slate-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                style="width: 1.25rem"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class=""
+                >
+                  <path
+                    d="M8 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m6 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0M7.5 7.5c3.5-1 5.5-1 9 0m-9.5 9c3.5 1 6.5 1 10 0"
+                    class=""
+                  ></path>
+                  <path
+                    d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833-1.667 3.5-3c.667-1.667.5-5.833-1.5-11.5c-1.457-1.015-3-1.34-4.5-1.5l-1 2.5M8.5 17c0 1-1.356 3-1.832 3c-1.429 0-2.698-1.667-3.333-3c-.635-1.667-.476-5.833 1.428-11.5C6.151 4.485 7.545 4.16 9 4l1 2.5"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <div class="ut-cursor-pointer hover-typo-slate-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                style="width: 1.25rem"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
