@@ -19,11 +19,13 @@ menuToggle.addEventListener("click", () => {
     menuClose.classList.add("d-none");
     menuOpen.classList.remove("d-none");
     menuContainer.classList.add("d-none");
+    document.body.classList.remove("overflow-hidden");
   }
   if (!currentToggle()) {
     menuOpen.classList.add("d-none");
     menuClose.classList.remove("d-none");
     menuContainer.classList.remove("d-none");
+    document.body.classList.add("overflow-hidden");
   }
 });
 
@@ -34,11 +36,9 @@ function handleResize() {
     menuToggle.setAttribute("data-toggle", false);
     menuClose.classList.add("d-none");
     menuOpen.classList.remove("d-none");
+    document.body.classList.remove("overflow-hidden");
   }
 }
-
-// add event listener for initial page load
-window.addEventListener("load", handleResize);
 
 // add event listener for window resize
 window.addEventListener("resize", handleResize);

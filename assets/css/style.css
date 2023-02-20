@@ -11136,6 +11136,36 @@ main {
     margin-bottom: 5rem;
   }
 }
+blockquote {
+  font-size: 1.4em;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  line-height: 1.6;
+  position: relative;
+  background: #ededed;
+}
+
+.custom-blockquote-border {
+  border-top: 8px solid #0b558c;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "“";
+  color: #0b558c;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+@media (min-width: 768px) {
+  .custom-blockquote-border {
+    border-top: 0;
+    border-left: 8px solid #0b558c;
+  }
+}
 /* utilities */
 .ut-container {
   max-width: 72rem;
