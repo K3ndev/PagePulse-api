@@ -3,6 +3,7 @@
 // variables
 const scanInsight = document.querySelector("#scanInsight");
 const elScan = document.querySelector("#resultScan");
+const inputURL = document.querySelector("#inputURL");
 
 // loading svg
 const loadingSvg = `
@@ -22,7 +23,11 @@ const loadingSvg = `
 `;
 
 scanInsight?.addEventListener("click", () => {
-  console.log("clicked");
+  // guard
+  if (inputURL.value === "") {
+    inputURL.classList.add("ut-input-warning");
+    return;
+  }
   scanInsight.innerHTML = `Run Test ${loadingSvg}`;
   scanInsight.disabled = true;
 
@@ -34,7 +39,10 @@ scanInsight?.addEventListener("click", () => {
   setTimeout(() => {
     scanInsight.innerHTML = `Run Test`;
     scanInsight.disabled = false;
+    inputURL.classList.remove("ut-input-warning");
     elScan.innerHTML = "";
     elScan.appendChild(resultScan);
+
+    console.log(inputURL.value);
   }, 3000);
 });
