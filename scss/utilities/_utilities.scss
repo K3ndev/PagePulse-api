@@ -21,6 +21,18 @@
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
+.ut-input-warning {
+  border: red solid 1px !important;
+}
+.ut-none-outline {
+  border: 1px solid black;
+}
+.ut-none-outline:focus {
+  outline: none;
+  outline-width: 0px;
+  border: 1px solid #0b558c;
+}
+
 // md
 @media (min-width: 768px) {
   .ut-w-md-auto {

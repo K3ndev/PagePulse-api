@@ -24,7 +24,7 @@
           <a
             class="px-3 py-1 btn btn-outline-light border text-primary w-100"
             id="btn-dashboard"
-            href="./pages/dashBoard.html"
+            href="./pages/login.html"
           >
             Account
             <svg
@@ -169,6 +169,7 @@
                 https://
               </p>
               <input
+                id="inputURL"
                 autocomplete="none"
                 type="text"
                 style="
@@ -177,7 +178,7 @@
                   padding-bottom: 0.28rem;
                 "
                 placeholder="webpulse.com"
-                class="w-100 ut-w-md-auto"
+                class="w-100 ut-w-md-auto ut-none-outline"
               />
             </div>
 
@@ -236,27 +237,43 @@
           </div>
         </section>
       </div>
-      <section style="padding-bottom: 3rem; padding-top: 3rem"
-      class="ut-pt-md-9 ut-container px-3">
+      <section
+        style="padding-bottom: 5rem; padding-top: 5rem"
+        class="ut-pt-md-9 ut-container px-3"
+      >
         <div class="row d-flex justify-content-center">
           <div class="col-md-10 col-xl-8 text-center">
-            <h2 class="mb-4 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl">Testimonials</h2>
+            <h2
+              class="mb-4 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl"
+            >
+              Testimonials
+            </h2>
             <p class="mb-4 pb-2 mb-md-5 pb-md-0">
               See what our satisfied users have to say about our webPulse!
             </p>
           </div>
         </div>
-      
+
         <div class="row text-center">
           <div class="col-md-4 mb-5 mb-md-0">
             <div class="d-flex justify-content-center mb-4">
-              <img src="https://static01.nyt.com/images/2021/05/17/business/14altGates-print/14Gates--top-mediumSquareAt3X.jpg"
-                class="rounded-circle shadow-1-strong" width="150" height="150" />
+              <img
+                src="https://static01.nyt.com/images/2021/05/17/business/14altGates-print/14Gates--top-mediumSquareAt3X.jpg"
+                class="rounded-circle shadow-1-strong"
+                width="150"
+                height="150"
+              />
             </div>
-            <h5 class="mb-3 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl">Bill Ofrights</h5>
+            <h5
+              class="mb-3 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl"
+            >
+              Bill Ofrights
+            </h5>
             <h6 class="text-primary mb-3">Web Developer</h6>
             <p class="px-xl-3">
-              <i class="fas fa-quote-left pe-2"></i>webPulse is a game-changer! It helped me identify and fix issues on my site, improving my user experience and ultimately boosting my business.
+              <i class="fas fa-quote-left pe-2"></i>webPulse is a game-changer!
+              It helped me identify and fix issues on my site, improving my user
+              experience and ultimately boosting my business.
             </p>
             <ul class="list-unstyled d-flex justify-content-center mb-0">
               <li>
@@ -278,13 +295,24 @@
           </div>
           <div class="col-md-4 mb-5 mb-md-0">
             <div class="d-flex justify-content-center mb-4">
-              <img src="https://backend.artreview.com/wp-content/uploads/2021/11/square-Mark-Zuckerberg_Courtesy-Facebook.jpg"
-                class="rounded-circle shadow-1-strong" width="150" height="150" />
+              <img
+                src="https://backend.artreview.com/wp-content/uploads/2021/11/square-Mark-Zuckerberg_Courtesy-Facebook.jpg"
+                class="rounded-circle shadow-1-strong"
+                width="150"
+                height="150"
+              />
             </div>
-            <h5 class="mb-3 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl">Marky Zuckerpunch</h5>
+            <h5
+              class="mb-3 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl"
+            >
+              Marky Zuckerpunch
+            </h5>
             <h6 class="text-primary mb-3">Digital Marketing Specialist</h6>
             <p class="px-xl-3">
-              <i class="fas fa-quote-left pe-2"></i>As a non-technical person, I was skeptical about using a website tester app, but this one exceeded my expectations. It was user-friendly and helped me detect issues that I would have never noticed on my own.
+              <i class="fas fa-quote-left pe-2"></i>As a non-technical person, I
+              was skeptical about using a website tester app, but this one
+              exceeded my expectations. It was user-friendly and helped me
+              detect issues that I would have never noticed on my own.
             </p>
             <ul class="list-unstyled d-flex justify-content-center mb-0">
               <li>
@@ -306,13 +334,25 @@
           </div>
           <div class="col-md-4 mb-0">
             <div class="d-flex justify-content-center mb-4">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsRAUnKcdHCjBG8W2iUeMkIaT1jRwjuwiEg&usqp=CAU"
-                class="rounded-circle shadow-1-strong" width="150" height="150" />
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsRAUnKcdHCjBG8W2iUeMkIaT1jRwjuwiEg&usqp=CAU"
+                class="rounded-circle shadow-1-strong"
+                width="150"
+                height="150"
+              />
             </div>
-            <h5 class="mb-3 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl">Ewlon Masks</h5>
+            <h5
+              class="mb-3 typo-gray-600 typo-font-bold typo-text-xl typo-text-md-2xl"
+            >
+              Ewlon Masks
+            </h5>
             <h6 class="text-primary mb-3">UX Designer</h6>
             <p class="px-xl-3">
-              <i class="fas fa-quote-left pe-2"></i>I've been using webPulse for a while now, and it has saved me countless hours of manual testing. The detailed reports and actionable insights have allowed me to make informed decisions and improve my website's performance.
+              <i class="fas fa-quote-left pe-2"></i>I've been using webPulse for
+              a while now, and it has saved me countless hours of manual
+              testing. The detailed reports and actionable insights have allowed
+              me to make informed decisions and improve my website's
+              performance.
             </p>
             <ul class="list-unstyled d-flex justify-content-center mb-0">
               <li>
@@ -352,7 +392,6 @@
           </p>
         </blockquote>
       </section>
-      
     </main>
 
     <footer
@@ -474,7 +513,6 @@
 
     <!-- cdn bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./main.js" defer></script>
   </body>
 </html>
