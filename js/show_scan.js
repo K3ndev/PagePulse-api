@@ -1,5 +1,8 @@
 "use strict";
 
+// import
+import fetchData from "./fetch.js";
+
 // variables
 const scanInsight = document.querySelector("#scanInsight");
 const elScan = document.querySelector("#resultScan");
@@ -44,5 +47,8 @@ scanInsight?.addEventListener("click", () => {
     elScan.appendChild(resultScan);
 
     console.log(inputURL.value);
+    // fetch data
+    const { data } = fetchData("cacheOn", inputURL.value);
+    console.log(data);
   }, 3000);
 });
