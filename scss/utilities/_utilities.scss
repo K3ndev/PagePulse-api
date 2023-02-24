@@ -33,6 +33,16 @@
   border: 1px solid #0b558c;
 }
 
+.ut-drop-shadow {
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+    drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
+
+.custom-vitalWidth {
+  width: 100%;
+  // max-width: 24rem;
+}
+
 // md
 @media (min-width: 768px) {
   .ut-w-md-auto {
@@ -40,5 +50,8 @@
   }
   .ut-pt-md-9 {
     padding-top: 9rem !important;
+  }
+  .custom-vitalWidth {
+    max-width: 24rem;
   }
 }

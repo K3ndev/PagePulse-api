@@ -2,11 +2,13 @@
 
 // import
 import fetchData from "./fetch.js";
+import ResultScan from "./result_component.js";
 
 // variables
 const scanInsight = document.querySelector("#scanInsight");
 const elScan = document.querySelector("#resultScan");
 const inputURL = document.querySelector("#inputURL");
+const scanInput = document.querySelector("#scanInput");
 
 // loading svg
 const loadingSvg = `
@@ -36,7 +38,7 @@ scanInsight?.addEventListener("click", () => {
 
   // create element
   const resultScan = document.createElement("div");
-  resultScan.innerHTML = `<div class='ut-container px-3 '><p class='bg-primary'>SCAN RESULT</p></div>`;
+  resultScan.innerHTML = ResultScan();
 
   // timer
   setTimeout(() => {
@@ -45,6 +47,7 @@ scanInsight?.addEventListener("click", () => {
     inputURL.classList.remove("ut-input-warning");
     elScan.innerHTML = "";
     elScan.appendChild(resultScan);
+    scanInput.classList.add("d-none");
 
     console.log(inputURL.value);
     // fetch data
