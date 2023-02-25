@@ -27,12 +27,28 @@ const loadingSvg = `
 </svg>
 `;
 
+const checkUrl = (url) => {
+  const regexHttp = /^http/;
+  const regexDot = /\./;
+  if (!regexHttp.test(url) && regexDot.test(url)) {
+    return true;
+  }
+  return false;
+};
+
 scanInsight?.addEventListener("click", () => {
   // guard
   if (inputURL.value === "") {
     inputURL.classList.add("ut-input-warning");
     return;
   }
+
+  // for some reason -> inputURL.value === "" && !checkUrl(inputURL.value), doesn't work
+  if (!checkUrl(inputURL.value)) {
+    inputURL.classList.add("ut-input-warning");
+    return;
+  }
+
   scanInsight.innerHTML = `Run Test ${loadingSvg}`;
   scanInsight.disabled = true;
 

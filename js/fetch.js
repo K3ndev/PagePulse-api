@@ -58,9 +58,11 @@ const mockData = {
 // instead of using cache we use localStorage
 // the function will going to check if the url scan before, if yes then get a data from localStorage if not then re setItem the data
 const fetchData = (isCache = "", url = "") => {
+  // not needed
   if (isCache !== "cacheOn") {
     return;
   }
+
   const randomNum = () => {
     return Math.floor(Math.random() * 1000000) + 1;
     // too long
