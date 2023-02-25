@@ -42,6 +42,16 @@
   box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
 }
 
+.ut-button-reset {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.ut-button-reset:focus {
+  outline: none;
+}
+
 .custom-vitalWidth {
   width: 100%;
   // max-width: 24rem;
