@@ -11094,7 +11094,7 @@ main {
   width: 100%;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(#fff, rgba(255, 255, 255, 0.2));
+  background-image: radial-gradient(#fff, rgba(255, 255, 255, 0.1));
   aspect-ratio: 1/1;
   inset: 0;
   margin: auto;
