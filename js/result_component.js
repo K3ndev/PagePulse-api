@@ -127,7 +127,7 @@ const ResultScan = ({
 
           <!-- ads -->
           <div
-            class="mb-5 p-3 p-md-4 d-flex justify-content-between align-items-center flex-column flex-md-row"
+            class="mb-5 p-3 p-md-4 d-flex justify-content-between align-items-center flex-column flex-md-row ut-shadow-inner"
             style="background-color: #ededed"
           >
             <div>
@@ -162,7 +162,7 @@ const ResultScan = ({
 
           <div class="">
             <h2 class="text-black typo-text-lg">Lighthouse Audits</h2>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion accordion-flush ut-shadow-md" id="accordionFlushExample" style='border: solid #f3f4f6 1px;'>
               <!-- 1 -->
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
