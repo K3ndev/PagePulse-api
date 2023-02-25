@@ -36,16 +36,13 @@ scanInsight?.addEventListener("click", () => {
   scanInsight.innerHTML = `Run Test ${loadingSvg}`;
   scanInsight.disabled = true;
 
-  // create element
-  const resultScan = document.createElement("div");
-  resultScan.innerHTML = ResultScan();
-
-  // timer
+  // 3s then show
   setTimeout(() => {
     scanInsight.innerHTML = `Run Test`;
     scanInsight.disabled = false;
     inputURL.classList.remove("ut-input-warning");
     elScan.innerHTML = "";
+    const resultScan = document.createElement("div");
     elScan.appendChild(resultScan);
     scanInput.classList.add("d-none");
 
@@ -53,5 +50,25 @@ scanInsight?.addEventListener("click", () => {
     // fetch data
     const { data } = fetchData("cacheOn", inputURL.value);
     console.log(data);
+
+    // create element
+    resultScan.innerHTML = ResultScan({
+      url: inputURL.value,
+      lighthouse: data[0].lighthouse,
+      lcp: data[0].largestContentfulPaint,
+      tbt: data[0].totalBlockingTime,
+      cls: data[0].cumulativeLayoutShift,
+      fcp: data[0].firstContentfulPaint,
+      si: data[0].speedIndex,
+      tti: data[0].timeToInteractive,
+      assetsTotal: data[0].weight.total,
+      assetsImage: data[0].weight.image,
+      assetsJs: data[0].weight.script,
+      assetsHtml: data[0].weight.document,
+      assetsFont: data[0].weight.font,
+      assetsCss: data[0].weight.stylesheet,
+      assetsThirdParty: data[0].weight.thirdParty,
+      timestamp: data[0].timestamp,
+    });
   }, 3000);
 });

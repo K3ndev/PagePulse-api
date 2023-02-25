@@ -1,6 +1,26 @@
 "use strict";
 
-const ResultScan = () => {
+const ResultScan = ({
+  url,
+  lighthouse,
+  lcp,
+  tbt,
+  cls,
+  fcp,
+  si,
+  tti,
+  assetsTotal,
+  assetsImage,
+  assetsJs,
+  assetsHtml,
+  assetsFont,
+  assetsCss,
+  assetsThirdParty,
+  timestamp,
+}) => {
+  const { accessibility, bestPractices, performance, seo, total, version } =
+    lighthouse;
+
   return `<section class="ut-container px-3 typo-slate-600">
           <div
             style="
@@ -19,19 +39,19 @@ const ResultScan = () => {
                 <h1>URL</h1>
                 <p>
                   <span class="d-none d-md-inline">https://</span
-                  >sample.com/
+                  >${url}/
                 </p>
               </div>
               <div class="d-flex flex-column">
-                <h2>Request Time</h2>
-                <p>1 min ago</p>
+                <h2>timestamp</h2>
+                <p>${timestamp}</p>
               </div>
             </div>
             <div class="mt-3 d-flex justify-content-between">
               <p>state: succeeded</p>
               <p>
                 lighthouse <span class="d-none d-md-inline">version</span>:
-                10.0.1
+                ${version}
               </p>
             </div>
           </div>
@@ -52,22 +72,22 @@ const ResultScan = () => {
               >
                 <h1>Web Vitals</h1>
                 <div class="d-flex align-items-baseline">
-                  <p style="color: #4ade80" class="typo-text-3xl">350</p>
+                  <p style="color: #4ade80" class="typo-text-3xl">${total}</p>
                   <span>/</span>
                   <p>400</p>
                 </div>
               </div>
               <div class="mt-3 d-flex flex-row justify-content-between">
                 <div>
-                  <p>LCP: 1.20s</p>
+                  <p>LCP: ${lcp}</p>
                   <!-- <p>MPFID: 28ms</p> -->
-                  <p>TBT: 0ms</p>
-                  <p>CLS: 0.02</p>
+                  <p>TBT: ${tbt}</p>
+                  <p>CLS: ${cls}</p>
                 </div>
                 <div>
-                  <p>FCP: 1.01s</p>
-                  <p>SI: 1.01s</p>
-                  <p>TTI: 1.01s</p>
+                  <p>FCP: ${fcp}</p>
+                  <p>SI: ${si}</p>
+                  <p>TTI: ${tti}</p>
                 </div>
               </div>
             </div>
@@ -86,20 +106,20 @@ const ResultScan = () => {
               >
                 <h1>Transferred Assets</h1>
                 <div class="d-flex align-items-center">
-                  <p>total: 1,006 KiB</p>
+                  <p>total: ${assetsTotal}</p>
                 </div>
               </div>
               <div class="mt-3 d-flex flex-row justify-content-between">
                 <div>
-                  <p>Image: 26.3kb</p>
+                  <p>Image: ${assetsImage}</p>
                   <!-- <p>MPFID: 28ms</p> -->
-                  <p>Script: 8.95kb</p>
-                  <p>Document: 5.17kb</p>
+                  <p>Script: ${assetsJs}</p>
+                  <p>Document: ${assetsHtml}</p>
                 </div>
                 <div>
-                  <p>Font: 1.02kb</p>
-                  <p>Stylesheet: 2.79kb</p>
-                  <p>ThirdParty: 3.63kb</p>
+                  <p>Font: ${assetsFont}</p>
+                  <p>Stylesheet: ${assetsCss}</p>
+                  <p>ThirdParty: ${assetsThirdParty}</p>
                 </div>
               </div>
             </div>
@@ -154,7 +174,7 @@ const ResultScan = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseOne"
                   >
-                    Performance: <span style="color: #4ade80"> 100</span>
+                    Performance: <span style="color: #4ade80"> ${performance}</span>
                   </button>
                 </h2>
                 <div
@@ -164,7 +184,7 @@ const ResultScan = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Page prevented back/forward cache restoration
+                    The page should be prevented back/forward cache restoration
                   </div>
                   <div class="accordion-body">First Contentful Paint</div>
                   <div class="accordion-body">Largest Contentful Paint</div>
@@ -177,7 +197,7 @@ const ResultScan = () => {
                   </div>
                   <div class="accordion-body">First Meaningful Paint</div>
                   <div class="accordion-body">
-                    Eliminate render-blocking resources
+                    Eliminate the render-blocking resources
                   </div>
                   <div class="accordion-body">Properly size images</div>
                   <div class="accordion-body">Defer offscreen images</div>
@@ -226,7 +246,7 @@ const ResultScan = () => {
                   </div>
                   <div class="accordion-body">Avoids document.write()</div>
                   <div class="accordion-body">
-                    Image elements have explicit width and height
+                    Image elements should have explicit width and height
                   </div>
                   <div class="accordion-body">
                     Has a <meta name="viewport" /> tag with width or
@@ -247,7 +267,7 @@ const ResultScan = () => {
                     aria-controls="flush-collapseTwo"
                   >
                     Accessibility:
-                    <span style="color: #4ade80"> 90</span>
+                    <span style="color: #4ade80"> ${accessibility}</span>
                   </button>
                 </h2>
                 <div
@@ -260,46 +280,46 @@ const ResultScan = () => {
                     [aria-*] attributes match their roles
                   </div>
                   <div class="accordion-body">
-                    [aria-hidden="true"] is not present on the document body tag
+                    [aria-hidden="true"] should  not present on the document body tag
                   </div>
                   <div class="accordion-body">
-                    [aria-*] attributes have valid values
+                    [aria-*] attributes should have valid values
                   </div>
                   <div class="accordion-body">
-                    [aria-*] attributes are valid and not misspelled
+                    [aria-*] attributes should be valid and not misspelled
                   </div>
                   <div class="accordion-body">
-                    Background and foreground colors have a sufficient contrast
+                    Background and foreground colors should have a sufficient contrast
                     ratio
                   </div>
                   <div class="accordion-body">
-                    Document has a title tag element
+                    Document should have a title tag element
                   </div>
                   <div class="accordion-body">
-                    Heading elements appear in a sequentially-descending order
+                    Heading elements should appear in a sequentially-descending order
                   </div>
                   <div class="accordion-body">
-                    html tag element has a [lang] attribute
+                    html tag element should have a [lang] attribute
                   </div>
                   <div class="accordion-body">
-                    html tag element has a valid value for its [lang] attribute
+                    html tag element should have a valid value for its [lang] attribute
                   </div>
                   <div class="accordion-body">
-                    Image elements have [alt] attributes
+                    Image elements should have [alt] attributes
                   </div>
                   <div class="accordion-body">
-                    Links have a discernible name
+                    Links should have a discernible name
                   </div>
                   <div class="accordion-body">
-                    Lists contain only li tag elements and script supporting
+                    Lists contain should only have li tag elements and script supporting
                     elements (script and template tag).
                   </div>
                   <div class="accordion-body">
-                    List items (li tag) are contained within ul, ol or menu tag
+                    List items (li tag) should contained within ul, ol or menu tag
                     parent elements
                   </div>
                   <div class="accordion-body">
-                    [user-scalable="no"] is not used in the meta name="viewport"
+                    [user-scalable="no"] should  not used in the meta name="viewport"
                     element and the [maximum-scale] attribute is not less than
                     5.
                   </div>
@@ -317,7 +337,7 @@ const ResultScan = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
                   >
-                    Best Practices: <span style="color: #4ade80"> 80</span>
+                    Best Practices: <span style="color: #4ade80"> ${bestPractices}</span>
                   </button>
                 </h2>
                 <div
@@ -328,21 +348,21 @@ const ResultScan = () => {
                 >
                   <div class="accordion-body">Uses HTTPS</div>
                   <div class="accordion-body">
-                    Avoids requesting the geolocation permission on page load
+                    Should avoid requesting the geolocation permission on page load
                   </div>
                   <div class="accordion-body">
-                    Avoids requesting the notification permission on page load
+                    Should avoid requesting the notification permission on page load
                   </div>
                   <div class="accordion-body">
-                    Allows users to paste into input fields
+                    Should allow users to paste into input fields
                   </div>
                   <div class="accordion-body">
-                    Displays images with correct aspect ratio
+                    Should displays images with correct aspect ratio
                   </div>
                   <div class="accordion-body">
-                    Serves images with appropriate resolution
+                    should serves images with appropriate resolution
                   </div>
-                  <div class="accordion-body">Page has the HTML doctype</div>
+                  <div class="accordion-body">Page should have the HTML doctype</div>
                   <div class="accordion-body">Properly defines charset</div>
                   <div class="accordion-body">
                     Avoids unload event listeners
@@ -369,7 +389,7 @@ const ResultScan = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseFour"
                   >
-                    SEO: <span style="color: #4ade80"> 80</span>
+                    SEO: <span style="color: #4ade80"> ${seo}</span>
                   </button>
                 </h2>
                 <div
@@ -381,35 +401,35 @@ const ResultScan = () => {
                   <div class="accordion-body">Links are not crawlable</div>
                   <div class="accordion-body">
                     <p>
-                      Has a <code>&lt;meta name="viewport"&gt;</code> tag with
+                      Should have a <code>&lt;meta name="viewport"&gt;</code> tag with
                       width or initial-scale
                     </p>
                   </div>
                   <div class="accordion-body">
-                    <p>Document has a <code>&lt;title&gt;</code> element</p>
+                    <p>Document should have a <code>&lt;title&gt;</code> element</p>
                   </div>
                   <div class="accordion-body">
-                    Document has a meta description
+                    Document should have a meta description
                   </div>
                   <div class="accordion-body">
-                    Page has successful HTTP status code
+                    Page should have successful HTTP status code
                   </div>
                   <div class="accordion-body">Links have descriptive text</div>
                   <div class="accordion-body">
                     Page isn&rsquo;t blocked from indexing
                   </div>
                   <div class="accordion-body">
-                    Image elements have [alt] attributes
+                    Image elements should have [alt] attributes
                   </div>
                   <div class="accordion-body">
-                    Document has a valid hreflang
+                    Document should have a valid hreflang
                   </div>
                   <div class="accordion-body">
-                    Document uses legible font sizes
+                    Document should uses legible font sizes
                   </div>
                   <div class="accordion-body">Document avoids plugins</div>
                   <div class="accordion-body">
-                    Tap targets are sized appropriately
+                    Tap targets should have sized appropriately
                   </div>
                 </div>
               </div>

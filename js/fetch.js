@@ -6,35 +6,32 @@ const mockData = {
   ranks: { hundos: 1, performance: 1, accessibility: 1, cumulative: 1 },
   lighthouse: {
     version: "10.0.1",
-    performance: 0.25,
-    accessibility: 0.98,
-    bestPractices: 0.83,
-    seo: 0.93,
-    total: 299,
+    performance: "100",
+    accessibility: "90",
+    bestPractices: "80",
+    seo: "80",
+    total: "350",
   },
-  firstContentfulPaint: 7072.134999999999,
-  firstMeaningfulPaint: 7072.134999999999,
-  speedIndex: 12179.751227258272,
-  largestContentfulPaint: 18287.6765,
-  totalBlockingTime: 5485.376,
-  cumulativeLayoutShift: 0,
-  timeToInteractive: 20514.459000000003,
-  maxPotentialFirstInputDelay: 2360,
-  timeToFirstByte: 188.765,
-  // kB
+  firstContentfulPaint: "785ms",
+  speedIndex: "785ms",
+  largestContentfulPaint: "1.47s",
+  totalBlockingTime: "0ms",
+  cumulativeLayoutShift: "0.00",
+  timeToInteractive: "785ms",
+  maxPotentialFirstInputDelay: "46ms",
   weight: {
-    summary: "85 requests • 1,006 KiB",
-    total: 1030498,
-    image: 124039,
+    summary: "85 requests • 91 kib",
+    total: "91 kib",
+    image: "6 kib",
     imageCount: 18,
-    script: 653565,
+    script: "27 kib",
     scriptCount: 41,
-    document: 123234,
-    font: 55622,
+    document: "3 kib",
+    font: "49 kib",
     fontCount: 2,
-    stylesheet: 3051,
+    stylesheet: "6 kib",
     stylesheetCount: 2,
-    thirdParty: 200003,
+    thirdParty: "6 kib",
     thirdPartyCount: 36,
   },
   run: { number: 3, total: 3 },
@@ -54,11 +51,11 @@ const mockData = {
     "-totalBlockingTime": 1,
     "-largestContentfulPaint": 1,
   },
-  // there's a log, probably you can see the violations?
+  // there's a log, probably use that to show the violations?
   axe: { passes: 994, violations: 13 },
 };
 
-// instead of using cache we use localStorage for the requirement of the proj
+// instead of using cache we use localStorage
 // the function will going to check if the url scan before, if yes then get a data from localStorage if not then re setItem the data
 const fetchData = (isCache = "", url = "") => {
   if (isCache !== "cacheOn") {
@@ -66,6 +63,8 @@ const fetchData = (isCache = "", url = "") => {
   }
   const randomNum = () => {
     return Math.floor(Math.random() * 1000000) + 1;
+    // too long
+    // return Date.now();
   };
   // new deep
   const cloneData = () => {
