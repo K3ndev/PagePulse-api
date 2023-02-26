@@ -95,21 +95,49 @@ signInHandler?.addEventListener("click", () => {
 });
 
 //
+// createHandler?.addEventListener("click", () => {
+//   setAccountData();
+//   //  simple validation
+//   if (createEmail.value !== "" && createPassword.value !== "") {
+//     // CODE HERE
+//     // todo, append/re-set an account to localStorage -> 'tempAccountData'
+//     console.log(
+//       "append/re-set an account to localStorage -> 'tempAccountData'"
+//     );
+
+//     console.log("create");
+//     // CODE HERE
+
+//     // reset inputs
+//     createEmail.value = "";
+//     createPassword.value = "";
+//   }
+// });
 createHandler?.addEventListener("click", () => {
   setAccountData();
   //  simple validation
   if (createEmail.value !== "" && createPassword.value !== "") {
-    // CODE HERE
-    // todo, append/re-set an account to localStorage -> 'tempAccountData'
-    console.log(
-      "append/re-set an account to localStorage -> 'tempAccountData'"
-    );
+    // retrieve existing data from localStorage
+    const tempAccountData = JSON.parse(localStorage.getItem('tempAccountData')) || [];
 
+    // create a new account object
+    const newAccount = {
+      email: createEmail.value,
+      password: createPassword.value,
+    };
+
+    // add the new account to the existing data
+    tempAccountData.push(newAccount);
+
+    // save the updated data back to localStorage
+    localStorage.setItem('tempAccountData', JSON.stringify(tempAccountData));
+
+    console.log("append/re-set an account to localStorage -> 'tempAccountData'");
     console.log("create");
-    // CODE HERE
 
     // reset inputs
     createEmail.value = "";
     createPassword.value = "";
   }
 });
+
