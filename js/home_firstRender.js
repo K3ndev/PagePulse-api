@@ -34,8 +34,6 @@ const currentAccount = () => {
       btnDashboard1.innerText = `${currentAccount().privilege} ${
         currentAccount().id
       }`;
-      btnDashboard2.href = "../pages/dashboard.html";
-      btnDashboard1.href = "../pages/dashboard.html";
 
       const regexLocalhost = /localhost/i;
       if (regexLocalhost.test(currentUrl)) {
