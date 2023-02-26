@@ -49,13 +49,11 @@ const currentAccount = () => {
       const regexLocalhost = /localhost/i;
       const currentUrl = window.location.href;
       if (regexLocalhost.test(currentUrl)) {
-        console.log("if 1st");
         btnDashboard2.href = "./pages/dashboard.html";
         btnDashboard1.href = "./pages/dashboard.html";
       } else {
-        console.log("if 2nd");
-        btnDashboard2.href = "./web-pulse/pages/dashboard.html";
-        btnDashboard1.href = "./web-pulse/pages/dashboard.html";
+        btnDashboard2.href = "/web-pulse/pages/dashboard.html";
+        btnDashboard1.href = "/web-pulse/pages/dashboard.html";
       }
     }
   }
