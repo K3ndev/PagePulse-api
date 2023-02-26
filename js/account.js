@@ -45,14 +45,54 @@ const setAccountData = () => {
   }
 };
 
+// check if the email and password is exist in temp localStorage
+const checkEmail = (email, password) => {
+  const tempAccountData = JSON.parse(localStorage.getItem("tempAccountData"));
+  return tempAccountData.some((item) => {
+    return item.email === email && item.password === password;
+  });
+};
+
 // create/sign in listener
 //
 signInHandler?.addEventListener("click", () => {
   setAccountData();
   //  simple validation
-  //   this is weird, return and else cant stop running the code of resetting the inputs
+  //   this is weird, return and else cant stop running the whole signInHandler code
   if (signInEmail.value !== "" && signInPassword.value !== "") {
     console.log("sign in");
+
+    // validation the email and password is exist
+    if (checkEmail(signInEmail.value, signInPassword.value)) {
+      // reset
+      signInEmail.classList.remove("ut-input-warning");
+      signInPassword.classList.remove("ut-input-warning");
+
+      // re-direct
+      const regexLocalhost = /localhost/i;
+      const currentUrl = window.location.href;
+
+      // fake session
+      const tempSession = { currentEmail: signInEmail.value };
+      localStorage.setItem("tempSessionAccount", JSON.stringify(tempSession));
+
+      // === comparing, doesn't work i dunno why, even thou i use split and join
+      if (regexLocalhost.test(currentUrl)) {
+        window.location.href = "http://localhost:5501/pages/dashboard.html";
+        console.log(
+          "re-directing to http://localhost:5501/pages/dashboard.html"
+        );
+      } else {
+        window.location.href =
+          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
+        console.log(
+          "re-directing to https://k3ndev.github.io/web-pulse/pages/dashboard.html"
+        );
+      }
+    } else {
+      signInEmail.classList.add("ut-input-warning");
+      signInPassword.classList.add("ut-input-warning");
+    }
 
     // reset inputs
     signInEmail.value = "";

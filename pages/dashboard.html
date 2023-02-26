@@ -10,8 +10,7 @@
       name="description"
       content="WebPulse is a free platform that provides quick insights into your website's performance with powerful automation tools."
     />
-    <title id="tittlePage">webPulse | Sign In Page</title>
-    <style></style>
+    <title id="tittlePage">webPulse | Dashboard Page</title>
   </head>
   <body class="custom-background-grid">
     <div class="custom-background-layer"></div>
@@ -26,6 +25,7 @@
         <div class="d-flex flex-column gap-3">
           <a
             class="px-3 py-1 btn btn-outline-light border text-primary w-100"
+            id="btn-dashboard1"
             href="#"
           >
             Account
@@ -71,6 +71,7 @@
           <a href="#" class="typo-slate-500">Github</a>
           <a
             class="px-3 py-1 btn btn-outline-light border text-primary"
+            id="btn-dashboard2"
             href="#"
           >
             Account
@@ -140,94 +141,20 @@
         </button>
       </nav>
     </header>
-    <main style="padding-top: 5rem">
-      <section
+    <main style="padding-top: 5rem" id="container">
+      <!-- <section
         style="padding-bottom: 5rem; padding-top: 5rem"
         class="ut-pt-md-9"
-        id="signInDiv"
+        id="adminDashboard"
       >
-        <!-- login in form -->
         <div class="ut-container px-3">
-          <div class="card ut-shadow-md mx-auto" style="max-width: 460px">
-            <div class="card-body p-5">
-              <h2
-                class="text-center mb-5 typo-text-2xl typo-playfair fs-bolder"
-              >
-                Sign in to webPulse
-              </h2>
-              <div class="mb-4">
-                <input type="email" class="w-100" id="signInEmail" />
-                <label for="email">Email</label>
-              </div>
-              <div class="mb-4">
-                <input type="password" class="w-100" id="signInPassword" />
-                <label for="password">Password</label>
-              </div>
-              <div class="mb-2">
-                <input type="checkbox" />
-                <label for="passwordRemembered">Remember Password</label>
-              </div>
-              <div>
-                <button class="btn btn-primary w-100" id="signInHandler">
-                  Login
-                </button>
-              </div>
-              <hr class="my-4" />
-              <div class="mb-4">
-                <p class="text-center">Don't have an account yet?</p>
-                <button class="btn btn-secondary w-100" id="createAccountLink">
-                  Create an account here
-                </button>
-              </div>
-            </div>
+          <div class="bg-primary ut-shadow-md text-white ut-border-rounded p-5">
+            <h1 class="text-center">
+              Unauthorized human! Sign in to access my entertainment.
+            </h1>
           </div>
         </div>
-      </section>
-
-      <section
-        style="padding-bottom: 5rem; padding-top: 5rem"
-        class="ut-pt-md-9 d-none"
-        id="createDiv"
-      >
-        <!-- sign up form -->
-        <div class="ut-container px-3">
-          <div class="card ut-shadow-md mx-auto" style="max-width: 460px">
-            <div class="card-body p-5">
-              <h2
-                class="text-center mb-5 typo-text-2xl typo-playfair fs-bolder"
-              >
-                Create an Account
-              </h2>
-              <div class="mb-4">
-                <input type="email" class="w-100" id="createEmail" />
-                <label for="email">Email</label>
-              </div>
-              <div class="mb-4">
-                <input type="password" class="w-100" id="createPassword" />
-                <label for="password">Password</label>
-              </div>
-              <div>
-                <button class="btn btn-primary w-100" id="createHandler">
-                  Create
-                </button>
-              </div>
-              <div class="mb-2 text-center">
-                <p class="typo-text-sm typo-slate-700 ut-cursor-pointer">
-                  Terms of Service and Privacy Policy.
-                </p>
-              </div>
-              <hr class="my-4" />
-              <div class="mb-4">
-                <p class="text-center">You have an account already?</p>
-
-                <button class="btn btn-secondary w-100" id="signInAccountLink">
-                  Login an account here
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section> -->
     </main>
 
     <footer
@@ -353,6 +280,12 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
+    <script src="../js/dashboard_firstRender.js" defer></script>
     <script type="module" src="../main.js" defer></script>
+    <!-- first render -->
   </body>
 </html>
+
+<!-- https://dribbble.com/shots/19836314-Surface-Sales-Dashboard -->
+<!-- https://dribbble.com/shots/19769243-SoPan-Solar-Panel-Dashboard -->
+<!-- todo check the session if log in, if not then put some error message... when directing customizing the url -->

@@ -11226,6 +11226,10 @@ blockquote::before {
   outline: none;
 }
 
+.ut-border-rounded {
+  border-radius: 0.25rem;
+}
+
 .custom-vitalWidth {
   width: 100%;
 }
