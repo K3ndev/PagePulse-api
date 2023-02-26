@@ -32,10 +32,8 @@ const currentAccount = () => {
         btnDashboard1.href = "./pages/dashboard.html";
       } else {
         console.log("if 2nd");
-        btnDashboard2.href =
-          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
-        btnDashboard1.href =
-          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
+        btnDashboard2.href = "/web-pulse/pages/dashboard.html";
+        btnDashboard1.href = "/web-pulse/pages/dashboard.html";
       }
     }
     if (currentAccount().privilege === "user") {
@@ -58,12 +56,3 @@ const currentAccount = () => {
     }
   }
 })();
-
-// error log
-// btnDashboard1.href = "./web-pulse/pages/dashboard.html"; -> ?
-// btnDashboard1.href = "./pages/dashboard.html"; -> ../pages/dashboard.html
-// btnDashboard1.href = "/pages/dashboard.html"; -> ../pages/dashboard.html
-// btnDashboard1.href = "pages/dashboard.html"; -> ../pages/dashboard.html
-// btnDashboard1.href = "/web-pulse/pages/dashboard.html"; -> ../pages/dashboard.html
-// ok ok, it will record when we use <record>./dir this... holy cow, thats why web-pulse/ is missing
-// LOL, problem fixed, the problem is im logging in as admin not user, wtf
