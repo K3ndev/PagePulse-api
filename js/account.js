@@ -79,15 +79,9 @@ signInHandler?.addEventListener("click", () => {
       // === comparing, doesn't work i dunno why, even thou i use split and join
       if (regexLocalhost.test(currentUrl)) {
         window.location.href = "http://localhost:5501/pages/dashboard.html";
-        console.log(
-          "re-directing to http://localhost:5501/pages/dashboard.html"
-        );
       } else {
         window.location.href =
           "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
-        console.log(
-          "re-directing to https://k3ndev.github.io/web-pulse/pages/dashboard.html"
-        );
       }
     } else {
       signInEmail.classList.add("ut-input-warning");
