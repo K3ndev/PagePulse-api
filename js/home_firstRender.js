@@ -34,17 +34,8 @@ const currentAccount = () => {
       btnDashboard1.innerText = `${currentAccount().privilege} ${
         currentAccount().id
       }`;
-
-      const regexLocalhost = /localhost/i;
-      if (regexLocalhost.test(currentUrl)) {
-        btnDashboard2.href = "http://localhost:5501/pages/dashboard.html";
-        btnDashboard1.href = "http://localhost:5501/pages/dashboard.html";
-      } else {
-        btnDashboard2.href =
-          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
-        btnDashboard1.href =
-          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
-      }
+      btnDashboard2.href = "./pages/dashboard.html";
+      btnDashboard1.href = "./pages/dashboard.html";
     }
   }
 })();
