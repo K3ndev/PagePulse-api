@@ -34,8 +34,16 @@ const currentAccount = () => {
       btnDashboard1.innerText = `${currentAccount().privilege} ${
         currentAccount().id
       }`;
-      btnDashboard2.href = "./pages/dashboard.html";
-      btnDashboard1.href = "./pages/dashboard.html";
+
+      const regexLocalhost = /localhost/i;
+      const currentUrl = window.location.href;
+      if (regexLocalhost.test(currentUrl)) {
+        btnDashboard2.href = "./pages/dashboard.html";
+        btnDashboard1.href = "./pages/dashboard.html";
+      } else {
+        btnDashboard2.href = "./web-pulse/pages/dashboard.html";
+        btnDashboard1.href = "./web-pulse/pages/dashboard.html";
+      }
     }
   }
 })();
