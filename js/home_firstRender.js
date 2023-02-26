@@ -41,8 +41,8 @@ const currentAccount = () => {
         btnDashboard2.href = "./pages/dashboard.html";
         btnDashboard1.href = "./pages/dashboard.html";
       } else {
-        btnDashboard2.href = "./pages/dashboard.html";
-        btnDashboard1.href = "./pages/dashboard.html";
+        btnDashboard2.href = "/pages/dashboard.html";
+        btnDashboard1.href = "/pages/dashboard.html";
       }
     }
   }
