@@ -37,25 +37,25 @@ const currentAccount = () => {
 
       const regexLocalhost = /localhost/i;
       const currentUrl = window.location.href;
-      console.log(currentUrl);
-      console.log(regexLocalhost.test(currentUrl));
       if (regexLocalhost.test(currentUrl)) {
         console.log("if 1st");
         btnDashboard2.href = "./pages/dashboard.html";
         btnDashboard1.href = "./pages/dashboard.html";
       } else {
         console.log("if 2nd");
-        btnDashboard2.href = "/web-pulse/pages/dashboard.html";
-        btnDashboard1.href = "/web-pulse/pages/dashboard.html";
+        btnDashboard2.href =
+          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
+        btnDashboard1.href =
+          "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
       }
     }
   }
 })();
 
-// error log from github LOL
+// error log
 // btnDashboard1.href = "./web-pulse/pages/dashboard.html"; -> ?
 // btnDashboard1.href = "./pages/dashboard.html"; -> ../pages/dashboard.html
 // btnDashboard1.href = "/pages/dashboard.html"; -> ../pages/dashboard.html
 // btnDashboard1.href = "pages/dashboard.html"; -> ../pages/dashboard.html
-
-// /web-pulse/pages/dashboard.html
+// btnDashboard1.href = "/web-pulse/pages/dashboard.html"; -> ../pages/dashboard.html
+// ok ok, it will record when we use <record>./dir this... holy cow, thats why web-pulse/ is missing
