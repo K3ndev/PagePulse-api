@@ -24,12 +24,31 @@ const adminDashboard = (data) => {
       >
         <div class="ut-container px-3">
           <div class="bg-primary ut-shadow-md text-white ut-border-rounded p-5">
-            <h1 class="text-center">
-              admin
+            <h1 class="text-center p-2 bg-white text-black ut-shadow-inner mb-4 fs-bold typo-text-xl" style='border: solid 1px black;'>
+              Dashboard
             </h1>
-            <div>
-            ${data}
-            </div>
+            <table class='w-100' >
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Privilege</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${data
+                  .map((item) => {
+                    return `<tr>
+                              <td>${item.id}</td>
+                              <td>${item.privilege}</td>
+                              <td>${item.email}</td>
+                              <td>${item.password}</td>
+                            </tr>`;
+                  })
+                  .join("")}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>`;
@@ -92,7 +111,7 @@ const currentAccount = () => {
   } else if (currentAccount().privilege === "admin") {
     logoutBtn1.classList.remove("d-none");
     logoutBtn2.classList.remove("d-none");
-    container.innerHTML = adminDashboard(JSON.stringify(accountData, 0));
+    container.innerHTML = adminDashboard(accountData);
     btnDashboard2.innerText = currentAccount().privilege;
     btnDashboard1.innerText = currentAccount().privilege;
     btnDashboard2.href = "#";
