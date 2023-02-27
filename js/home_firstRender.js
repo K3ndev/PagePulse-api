@@ -59,7 +59,6 @@ const currentAccount = () => {
       }
     }
   } else {
-    console.log("hi");
     btnDashboard2.classList.remove("btn-primary");
     btnDashboard2.classList.remove("text-white");
     btnDashboard2.classList.add("btn-outline-light");

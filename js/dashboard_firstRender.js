@@ -34,16 +34,22 @@ const adminDashboard = (data) => {
                   <th>Privilege</th>
                   <th>Email</th>
                   <th>Password</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
                 ${data
                   .map((item) => {
-                    return `<tr>
+                    return `<tr data-id='${item.id}'>
                               <td>${item.id}</td>
                               <td>${item.privilege}</td>
                               <td>${item.email}</td>
                               <td>${item.password}</td>
+                              <td>${
+                                item.id !== 0
+                                  ? `<button class="btn btn-danger" onclick="deleteHandler(this)">delete</button>`
+                                  : `<button class="btn btn-danger" disable">disable</button>`
+                              }</td>
                             </tr>`;
                   })
                   .join("")}
@@ -160,5 +166,34 @@ logoutBtn2.addEventListener("click", () => {
   }
 });
 
-// PROBLEM
-// when you open 2 tab, and login at the same with different credential ... they have their own different session
+function deleteHandler(t) {
+  const tempId = t.parentNode.parentNode.dataset.id;
+  const tempData = accountData;
+
+  const filterChosen = (data, tempId) => {
+    return data.filter((item) => {
+      return item.id !== +tempId;
+    });
+  };
+
+  localStorage.setItem(
+    "tempAccountData",
+    JSON.stringify(filterChosen(tempData, tempId))
+  );
+  container.innerHTML = adminDashboard(tempData);
+
+  // render again, its hard refresh lmao haha, i don't want to create an observable or vdom
+  // === comparing, doesn't work i dunno why, even thou i use split and join
+  const regexLocalhost = /localhost/i;
+  const currentUrl = window.location.href;
+  if (regexLocalhost.test(currentUrl)) {
+    window.location.href = "http://localhost:5501/pages/dashboard.html";
+  } else {
+    window.location.href =
+      "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
+  }
+}
+
+// todo
+// add validation for the email just check if @ is exist
+// add delete functionality to the admin dashboard
