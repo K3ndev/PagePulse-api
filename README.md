@@ -5,8 +5,9 @@
 3. The scan results are currently fake, but we found a library that will integrated into our third project to solve this issue.
 4. The sign-up/sign-in function works properly and remembers the user's session even when they navigate to other pages on the site. The sign-out button is available on all pages.
 5. When attempting to access the dashboard page without being logged in, a message is displayed indicating that the user is not logged in.
-6. We were able to manage all the functionality using only three HTML files.
-7. For hard reset, please delete the localStorage
+6. The admin dashboard includes a feature to delete existing user accounts.
+7. We were able to manage all the functionality using only three HTML files.
+8. For hard reset, please delete the localStorage
 ---
 Default credential
 - email: admin@webpulse.com
