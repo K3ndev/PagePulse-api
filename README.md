@@ -1,4 +1,4 @@
-# Functianility of the site: 
+# Functionality of the site: 
 
 1. Local storage is used as the backend and session for the user's account data. All data (e.g. scan results, current account) is saved and retrieved from local storage to avoid unnecessary recreation. To confirm this, check the timestamp in the scan results after scanning the same URL again. Additionally, please refer to point #4 for ‘current account’.
 2. All user inputs have simple validation.
