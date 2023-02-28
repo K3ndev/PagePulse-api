@@ -94,3 +94,8 @@ logoutBtn2.addEventListener("click", () => {
     window.location.href = "https://k3ndev.github.io/web-pulse/";
   }
 });
+
+console.log("default credentials");
+console.log("email: admin@webpulse.com, password: admin");
+console.log("email: user@webpulse.com, password: user");
+console.log("for hard reset, just delete the local storage");

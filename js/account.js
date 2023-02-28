@@ -27,11 +27,19 @@ createAccountLink?.addEventListener("click", () => {
   signInDiv.classList.add("d-none");
   createDiv.classList.remove("d-none");
   tittlePage.textContent = "webPulse | Sign Up Page";
+
+  // reset inputs
+  signInEmail.value = "";
+  signInPassword.value = "";
 });
 signInAccountLink?.addEventListener("click", () => {
   createDiv.classList.add("d-none");
   signInDiv.classList.remove("d-none");
   tittlePage.textContent = "webPulse | Sign In Page";
+
+  // reset inputs
+  createEmail.value = "";
+  createPassword.value = "";
 });
 
 // will set a data to localStorage
@@ -53,6 +61,19 @@ const checkEmail = (email, password) => {
   });
 };
 
+// validation email
+const validateEmail = (email) => {
+  const regexEmail = /@/i;
+  const regexDot = /\./i;
+  return regexEmail.test(email) && regexDot.test(email);
+};
+
+// get the number from last index
+const getNumber = (data) => {
+  const lastIndex = data.length - 1;
+  return data[lastIndex].id + 1;
+};
+
 // create/sign in listener
 //
 signInHandler?.addEventListener("click", () => {
@@ -60,8 +81,6 @@ signInHandler?.addEventListener("click", () => {
   //  simple validation
   //   this is weird, return and else cant stop running the whole signInHandler code
   if (signInEmail.value !== "" && signInPassword.value !== "") {
-    console.log("sign in");
-
     // validation the email and password is exist
     if (checkEmail(signInEmail.value, signInPassword.value)) {
       // reset
@@ -83,6 +102,9 @@ signInHandler?.addEventListener("click", () => {
         window.location.href =
           "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
       }
+
+      signInEmail.classList.remove("ut-input-warning");
+      signInPassword.classList.remove("ut-input-warning");
     } else {
       signInEmail.classList.add("ut-input-warning");
       signInPassword.classList.add("ut-input-warning");
@@ -95,45 +117,44 @@ signInHandler?.addEventListener("click", () => {
 });
 
 //
-// createHandler?.addEventListener("click", () => {
-//   setAccountData();
-//   //  simple validation
-//   if (createEmail.value !== "" && createPassword.value !== "") {
-//     // CODE HERE
-//     // todo, append/re-set an account to localStorage -> 'tempAccountData'
-//     console.log(
-//       "append/re-set an account to localStorage -> 'tempAccountData'"
-//     );
-
-//     console.log("create");
-//     // CODE HERE
-
-//     // reset inputs
-//     createEmail.value = "";
-//     createPassword.value = "";
-//   }
-// });
 createHandler?.addEventListener("click", () => {
   setAccountData();
   //  simple validation
   if (createEmail.value !== "" && createPassword.value !== "") {
-    // retrieve existing data from localStorage
-    const tempAccountData = JSON.parse(localStorage.getItem('tempAccountData')) || [];
+    if (validateEmail(createEmail.value)) {
+      // retrieve existing data from localStorage
+      const tempAccountData =
+        JSON.parse(localStorage.getItem("tempAccountData")) || [];
 
-    // create a new account object
-    const newAccount = {
-      email: createEmail.value,
-      password: createPassword.value,
-    };
+      // create a new account object
+      const newAccount = {
+        id: getNumber(tempAccountData),
+        privilege: "user",
+        email: createEmail.value,
+        password: createPassword.value,
+      };
 
-    // add the new account to the existing data
-    tempAccountData.push(newAccount);
+      // add the new account to the existing data
+      tempAccountData.push(newAccount);
 
-    // save the updated data back to localStorage
-    localStorage.setItem('tempAccountData', JSON.stringify(tempAccountData));
+      // save the updated data back to localStorage
+      localStorage.setItem("tempAccountData", JSON.stringify(tempAccountData));
 
-    console.log("append/re-set an account to localStorage -> 'tempAccountData'");
-    console.log("create");
+      createEmail.classList.remove("ut-input-warning");
+      createPassword.classList.remove("ut-input-warning");
+
+      const regexLocalhost = /localhost/i;
+      const currentUrl = window.location.href;
+      if (regexLocalhost.test(currentUrl)) {
+        window.location.href = "http://localhost:5501/pages/account.html";
+      } else {
+        window.location.href =
+          "https://k3ndev.github.io/web-pulse/pages/account.html";
+      }
+    } else {
+      createEmail.classList.add("ut-input-warning");
+      createPassword.classList.add("ut-input-warning");
+    }
 
     // reset inputs
     createEmail.value = "";
@@ -141,3 +162,5 @@ createHandler?.addEventListener("click", () => {
   }
 });
 
+// todo
+// when toggling create and login, the input is saved, make this not

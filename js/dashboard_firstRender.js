@@ -193,7 +193,3 @@ function deleteHandler(t) {
       "https://k3ndev.github.io/web-pulse/pages/dashboard.html";
   }
 }
-
-// todo
-// add validation for the email just check if @ is exist
-// add delete functionality to the admin dashboard
