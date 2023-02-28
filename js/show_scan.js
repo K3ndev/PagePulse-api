@@ -60,7 +60,7 @@ scanInsight?.addEventListener("click", () => {
     elScan.innerHTML = "";
     const resultScan = document.createElement("div");
     elScan.appendChild(resultScan);
-    scanInput.classList.add("d-none");
+    scanInput.remove();
 
     // fetch data
     const { data } = fetchData("cacheOn", inputURL.value);
